@@ -41,10 +41,7 @@
       if (isNaN(harga) || isNaN(dp) || isNaN(bungaInput)) {
         hasilDiv.innerHTML = "<span style='color:red;'>Harga, DP, dan Bunga harus diisi dengan angka.</span>";
         return;
-      }
-
-      // buat kondisi ketika dp kurang dari 30%
-      if (dp < harga * 0.3) {
+      }else if (dp < harga * 0.3) {
         hasilDiv.innerHTML = "<span style='color:red;'>Uang Muka (DP) harus minimal 30% dari harga motor.</span>";
         return;
       }

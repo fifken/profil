@@ -21,6 +21,9 @@
     <option value="48">48 bulan</option>
   </select><br><br>
 
+  <label>Pemasukan (Rp):</label><br>
+  <input type="number" id="pemasukan" placeholder="Contoh: 5000000" /><br><br>
+
   <button onclick="hitungCicilan()">Hitung Cicilan</button>
 
   <h3>Hasil:</h3>
@@ -31,19 +34,21 @@
       const harga = parseFloat(document.getElementById("hargaMotor").value);
       const dp = parseFloat(document.getElementById("dp").value);
       const tenor = parseInt(document.getElementById("tenor").value);
+      const pemasukan = parseFloat(document.getElementById("pemasukan").value);
       const hasilDiv = document.getElementById("hasil");
 
       // Validasi input
-      if (isNaN(harga) || isNaN(dp)) {
-        hasilDiv.innerHTML = "<span style='color:red;'>Harga dan DP harus diisi dengan angka.</span>";
+      if (isNaN(harga) || isNaN(dp) || isNaN(pemasukan)) {
+        hasilDiv.innerHTML = "<span style='color:red;'>Harga, DP, dan Pemasukan harus diisi dengan angka.</span>";
+        return;
+      }else if (dp < harga * 0.3) {
+        hasilDiv.innerHTML = "<span style='color:red;'>Uang Muka (DP) harus minimal 30% dari harga motor.</span>";
+        return;
+      }else if(pemasukan < 3000000) {
+        hasilDiv.innerHTML = "<span style='color:red;'>Pemasukan harus minimal Rp 3.000.000.</span>";
         return;
       }
 
-      // buat kondisi ketika dp kurang dari 30%
-      if (dp < harga * 0.3) {
-        hasilDiv.innerHTML = "<span style='color:red;'>Uang Muka (DP) harus minimal 30% dari harga motor.</span>";
-        return;
-      }
       // buat perjitungan bunga
       let bungaInput;
       switch (tenor) {
@@ -60,16 +65,18 @@
           bungaInput = 14;
           break;
       }
+
+      // Perhitungan
       const pinjaman = harga - dp;
-      const bunga = (bungaInput / 100) / 12; // Bunga per bulan
-      const totalPembayaran = pinjaman * (1 + bunga * tenor); // Total pembayaran
+      const bunga = (bungaInput / 100) / 12;
+      const totalPembayaran = pinjaman * (1 + bunga * tenor);
       const cicilanBulanan = totalPembayaran / tenor;
 
       hasilDiv.innerHTML = `
         <p>Harga Motor: Rp ${harga.toLocaleString()}</p>
         <p>DP: Rp ${dp.toLocaleString()}</p>
         <p>Pinjaman: Rp ${pinjaman.toLocaleString()}</p>
-        <p>Bunga: ${bungaInput}%</p>
+        <p>Pemasukan: Rp ${pemasukan.toLocaleString()}</p>
         <p>Total Pembayaran: Rp ${totalPembayaran.toLocaleString()}</p>
         <p><strong>Cicilan per bulan: Rp ${cicilanBulanan.toLocaleString(undefined, { maximumFractionDigits: 0 })}</strong></p>
       `;
