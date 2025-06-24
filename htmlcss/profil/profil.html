@@ -1,118 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>New Profile</title>
-    <link rel="stylesheet" href="./profil.css" />
-  </head>
-  <body>
-    <div class="header">
-        <button class="button-header">Works</button>
-        <button class="button-header">About</button>
-        <button class="button-header">Contact</button>
-    </div>
-    <div class="content">
-    <div class="content1">
-        <div>
-            <div>Hi, I am Ken<br>Cyber Security-ist</div>
-            <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum consequuntur vel itaque sit deserunt illo labore voluptas suscipit, omnis tenetur.</div>
-            <div>Hobbies</div>
-            <div class="button-content1">Download CV</div>
-          </div>
-        <div>
-            <img src="../img/foto.jpg" alt="" class="foto" />
-        </div>
-    </div>
-    <div class="content2">
-        <div class="content2-header">
-          <div>Recent posts</div>
-          <div>View All</div>
-        </div>
-        <div class="content2-posts">
-          <div>
-            <div>title</div>
-            <div>
-              <span class="tanggal">tanggal</span>
-              <span class="tempat">tempat</span>
-            </div>
-            <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus, cumque.</div>
-          </div>
-          <div>
-            <div>title</div>
-            <div>
-              <span class="tanggal">tanggal</span>
-              <span class="tempat">tempat</span>
-            </div>
-            <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus, cumque.</div>
-          </div>
-        </div>
-    </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ken Profile</title>
+  <link rel="stylesheet" href="profils.css" />
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <header>
+      <nav class="navbar">
+        <ul class="nav-menu">
+          <li><a href="#about">About</a></li>
+          <li><a href="#works">Works</a></li>
+          <li><a href="#contact">Contact Me</a></li>
+        </ul>
+      </nav>
+    </header>
 
-    <div class="content3">
-      <div class="content3-header">Featured Work</div>
+    <!-- About Section -->
+    <section id="about" class="content1">
+      <div class="bio-text">
+        <h1>Hi, I am Ken<br /><span class="highlight">Cyber Security-ist</span></h1>
+        <p>
+          Saya adalah seorang praktisi cybersecurity dengan spesialisasi dalam <strong>Purple Team</strong>,
+          menggabungkan kekuatan ofensif (Red Team) dan defensif (Blue Team) untuk mengamankan sistem informasi secara menyeluruh.
+        </p>
+        <div class="hobbies">
+          <h3>Hobbies</h3>
+          <ul class="hobby-list">
+            <li>🏀 Basketball</li>
+            <li>🎾 Tennis</li>
+            <li>🎸 Badminton</li>
+            <li>🎮 Games</li>
+            <li>✈️ Travelling</li>
+            <li>🚴‍♂️ Touring</li>
+            <li>📈 Trading</li>
+          </ul>
+        </div>
+        <a href="#" class="button-content1">Download CV</a>
+      </div>
+      <div class="bio-foto">
+        <img src="../img/foto.jpg" alt="Ken Foto" class="foto" />
+      </div>
+    </section>
+
+    <!-- Works Section -->
+    <section id="works" class="content2">
+      <div class="content2-header">
+        <div>Recent posts</div>
+        <a href="#" class="view-all">View All</a>
+      </div>
+      <div class="content2-posts">
+        <div class="card">
+          <h4>FIFGroup Internal Web Development</h4>
+          <div><span class="tanggal">10 Mei 2025</span> - Jakarta</div>
+          <p>
+            Proyek pengembangan web internal untuk meningkatkan efisiensi operasional dan komunikasi perusahaan.
+          </p>
+        </div>
+
+        <div class="card">
+          <h4>Penetration Testing Report v2.0</h4>
+          <div><span class="tanggal">20 Juni 2025</span> - Jakarta</div>
+          <p>
+            Laporan hasil pengujian penetrasi yang mencakup temuan, rekomendasi, dan langkah perbaikan sistem.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Work -->
+    <section class="content3">
+      <h3 class="content3-header">Featured Work</h3>
       <div class="content3-posts">
-
-        <div class="content3-post">
-          <img src="../img/robot.jpg" alt="" class="content3-gmbr">
+        <div class="content3-post card-hover">
+          <img src="../img/robot.jpg" alt="Mr Robot" class="content3-gmbr" />
           <div class="content3-details">
-            <div class="content3-title">Lorem</div>
-            <div class="content3-tgl">
-              <span class="tanggal">tanggal</span>
-              <span class="tempat">tempat</span>
-            </div>
-            <div class="content3-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus, cumque.</div>
+            <div class="content3-title">Mr Robot</div>
+            <div class="content3-tgl">12 Januari 2020 - New York</div>
+            <p>Serial tentang insinyur keamanan siber yang direkrut kelompok peretas untuk menjatuhkan perusahaan besar.</p>
           </div>
         </div>
-        
-        <div class="content3-post">
-          <img src="../img/got.jpg" alt="" class="content3-gmbr">
+        <div class="content3-post card-hover">
+          <img src="../img/got.jpg" alt="Game of Thrones" class="content3-gmbr" />
           <div class="content3-details">
-            <div class="content3-title"></div>
-            <div class="content3-tgl">
-              <span class="tanggal">tanggal</span>
-              <span class="tempat">tempat</span>
-            </div>
-            <div class="content3-desc"></div>
+            <div class="content3-title">Game of Thrones</div>
+            <div class="content3-tgl">14 April 2019 - Westeros</div>
+            <p>Serial fantasi epik tentang perebutan tahta Iron Throne di dunia fiksi Westeros.</p>
           </div>
         </div>
+      </div>
+    </section>
 
-        <div class="content3-post">
-          <img src="../img/narcos.jpg" alt="" class="content3-gmbr">
-          <div class="content3-details">
-            <div class="content3-title"></div>
-            <div class="content3-tgl">
-              <span class="tanggal">tanggal</span>
-              <span class="tempat">tempat</span>
-            </div>
-            <div class="content3-desc"></div>
-          </div>
-        </div>
+    <!-- Contact -->
+    <section class="contact" id="contact">
+      <h2>Contact me ✍🏾</h2>
+      <form action="mailto:theopatra.ksusanto@fifgroup.astra.co.id" method="post" enctype="text/plain">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" placeholder="Your Name" />
+        <label for="email">Email:</label>
+        <input type="text" id="email" name="email" placeholder="Your Email" />
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" placeholder="Your Message"></textarea>
+        <input type="submit" value="Send" />
+      </form>
+    </section>
 
-    </div>
+    <!-- Video -->
+    <section class="video">
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/lajF0A942-Y?si=i80oLXMSaHCS7j82"
+        title="YouTube video player" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen></iframe>
+    </section>
 
-    <div class="contact">
-        <h2>Contact me</h2>
-        <form action="mailto:theopatra.ksusanto@fifgroup.astra.co.id" method="post" enctype="text/plain">
-            <label for="name">Name:</label><br />
-            <input type="text" id="name" name="name" placeholder="Your Name"/><br />
-            <label for="email">Email:</label><br />
-            <input type="text" id="email" name="email" placeholder="Your Email"/><br />
-            <label for="message">Message:</label><br />
-            <textarea id="message" name="message" placeholder="Your Message"></textarea><br />
-            <input type="submit" value="Send" />
-        </form>
-    </div>
-
-    <div class="footer">
-        <div class="footer-logo">
-        <img src="../img/linkedin.png" alt="" class="logo">
-        <img src="../img/github.png" alt="" class="logo">
-        <img src="../img/insta.avif" alt="" class="logo">
-        <img src="../img/fb.webp" alt="" class="logo">
-        </div>    
-        <div>Copyright @2025 All rights reserved</div>    
-    </div>
-
-  </body>
+    <!-- Footer -->
+    <footer>
+      <div class="footer-logo">
+        <a href="https://linkedin.com/in/namamu" target="_blank"><img src="../img/linkedin.png" alt="LinkedIn" class="logo" /></a>
+        <a href="https://github.com/namamu" target="_blank"><img src="../img/github.png" alt="GitHub" class="logo" /></a>
+        <a href="https://instagram.com/namamu" target="_blank"><img src="../img/insta.avif" alt="Instagram" class="logo" /></a>
+        <a href="https://facebook.com/namamu" target="_blank"><img src="../img/fb.webp" alt="Facebook" class="logo" /></a>
+      </div>
+      <p>©2025 All rights reserved</p>
+    </footer>
+  </div>
+</body>
 </html>

@@ -1,0 +1,273 @@
+:root {
+  --primary: #1C1C1E;
+  --secondary: #4B6A9B;
+  --accent: #E2E8F0;
+  --background: #F7FAFC;
+  --hover: #D1D5DB;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--primary);
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+}
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* NAVBAR */
+.navbar {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 40px;
+}
+
+.nav-menu {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  padding: 0;
+}
+
+.nav-menu li a {
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+.nav-menu li a:hover {
+  color: var(--secondary);
+}
+
+/* ABOUT SECTION */
+.content1 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+  margin-bottom: 60px;
+}
+
+.bio-text {
+  flex: 3;
+}
+
+.bio-foto {
+  flex: 2;
+}
+
+.bio-foto img {
+  width: 100%;
+  max-width: 250px;
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.highlight {
+  color: var(--secondary);
+}
+
+.button-content1 {
+  background-color: var(--secondary);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  margin-top: 20px;
+  display: inline-block;
+  transition: background-color 0.3s;
+}
+
+.button-content1:hover {
+  background-color: var(--hover);
+  color: var(--primary);
+}
+
+/* HOBBIES */
+.hobbies h3 {
+  margin-top: 20px;
+}
+
+.hobby-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  list-style: none;
+  padding: 0;
+}
+
+.hobby-list li {
+  background-color: var(--accent);
+  padding: 8px 16px;
+  border-radius: 999px;
+  font-weight: 500;
+  color: var(--primary);
+}
+
+/* RECENT POSTS */
+.content2 {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 40px;
+}
+
+.content2-header {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.view-all {
+  background-color: var(--secondary);
+  color: white;
+  padding: 6px 12px;
+  border-radius: 6px;
+  transition: background-color 0.3s;
+}
+
+.view-all:hover {
+  background-color: var(--hover);
+  color: var(--primary);
+}
+
+.content2-posts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.content2-posts .card {
+  flex: 1 1 calc(50% - 20px);
+  background-color: white;
+  padding: 16px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  transition: 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* FEATURED WORK */
+.content3-header {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.content3-posts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.content3-post {
+  display: flex;
+  gap: 20px;
+  flex: 1 1 calc(50% - 20px);
+  transition: transform 0.3s, box-shadow 0.3s;
+  background-color: white;
+  border-radius: 10px;
+  padding: 10px;
+  align-items: center;
+}
+
+.content3-post:hover {
+  transform: scale(1.01);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.content3-gmbr {
+  width: 120px;
+  height: 80px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+/* CONTACT */
+.contact input,
+.contact textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #aaa;
+  border-radius: 6px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+}
+
+.contact input[type="submit"] {
+  background-color: var(--secondary);
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.3s;
+}
+
+.contact input[type="submit"]:hover {
+  background-color: var(--hover);
+  color: var(--primary);
+}
+
+/* VIDEO */
+.video {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  margin-top: 40px;
+  border-top: 1px solid #ccc;
+  padding: 20px 0;
+}
+
+.footer-logo {
+  margin-bottom: 10px;
+}
+
+.footer-logo img {
+  width: 24px;
+  margin: 0 10px;
+  transition: transform 0.3s ease;
+}
+
+.footer-logo img:hover {
+  transform: scale(1.2);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .content1 {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .bio-foto {
+    order: -1;
+  }
+
+  .content2-posts .card,
+  .content3-post {
+    flex: 1 1 100%;
+  }
+
+  .content3-post {
+    flex-direction: column;
+    text-align: center;
+  }
+}
